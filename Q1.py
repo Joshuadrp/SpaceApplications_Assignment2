@@ -20,7 +20,7 @@ for i in my_tiffs:
 numpy_nir = np.array(nir_band)
 numpy_swir = np.array(swir_band)
 
-#1A Compute the normalised NBR for each pixel in the image.
+#1A Compute the normalised NBR.
 def normalized_burn_ratio(nir, swir):
     """
     Calculate Normalized Burn Ratio (NBR)
@@ -78,7 +78,6 @@ def forrest_in_trouble(nbr):
             if high_percent > 0.1 or moderate_percent > 1.0 or low_percent > 3.0:
                 there_is_fire = True
                 print(f"FIRE DETECTED AT T{t}, TAKE ACTION!!")
-
 
 forrest_in_trouble(nbr)
 
